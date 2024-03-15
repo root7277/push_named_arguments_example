@@ -16,7 +16,7 @@ class SecondPage extends StatelessWidget {
         child: Column(
           children: [
             CircleAvatar(
-              child: Image.asset(image1),
+              backgroundImage: AssetImage(image1),
             ),
             const SizedBox(height: 30),
             Text(title1)

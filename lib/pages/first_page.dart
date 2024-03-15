@@ -27,12 +27,32 @@ class _FirstPageState extends State<FirstPage> {
               SizedBox(
                 width: 300,
                 height: 300,
-                child: CircleAvatar(child: Image.asset(argumentKeldi[0].image)),
+                child: CircleAvatar(
+                  backgroundImage: AssetImage(argumentKeldi[0].image),
+                ),
               ),
               const SizedBox(height: 10),
               Text(
                 argumentKeldi[0].title,
                 style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(height: 50),
+              TextButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: const Text('Salom Adham'),
+                      backgroundColor: Colors.green,
+                      action: SnackBarAction(
+                        label: 'Yes',
+                        onPressed: () {},
+                        textColor: Colors.red,
+                        backgroundColor: Colors.blue,
+                      ),
+                    ),
+                  );
+                },
+                child: const Text('SnackBar'),
               )
             ],
           ),
